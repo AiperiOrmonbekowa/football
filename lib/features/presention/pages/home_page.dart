@@ -27,17 +27,13 @@ class HomePage extends StatelessWidget {
       ],
       ),
         ),
-       body: SingleChildScrollView(
-         child: const TabBarView(children:[ 
-               Card(child: GamePage()),
-               Card(child:Text('Футбольные поля'),),
-               Card(child: Text('Турниры'),
-               ),
-               Card(child: Text('Игроки '),
-               ),
-          
-         ],
-         ),
+       body: const TabBarView(children:[ 
+             GamePage(),
+             Text('Футбольные поля'),
+             Text('Турниры'),
+             Text('Игроки '),
+        
+       ],
        ),
      ),
     );
