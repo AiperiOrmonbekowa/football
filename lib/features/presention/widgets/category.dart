@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-class RowWidget extends StatelessWidget {
-  const RowWidget({
+class Category extends StatelessWidget {
+  const Category({
     super.key, required this.text, required this.icon, required this.onTap
   });
   final String text;

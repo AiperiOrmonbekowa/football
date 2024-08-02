@@ -20,13 +20,13 @@ class GamePage extends StatelessWidget {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        RowWidget(text: 'Карта',icon: Icons.map, onTap: (){},),
+        Category(text: 'Карта',icon: Icons.map, onTap: (){},),
       const  Gap(40),
-        RowWidget(text: 'Сортировка',icon: Icons.filter_list, onTap: (){
+        Category(text: 'Сортировка',icon: Icons.filter_list, onTap: (){
     showMyDialog(context);
         },),
         const Gap(40),
-        RowWidget(text: 'Фильтр',icon: Icons.filter_alt, onTap: (){},),
+        Category(text: 'Фильтр',icon: Icons.filter_alt, onTap: (){},),
       ],
     ),
       ),
