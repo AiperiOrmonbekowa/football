@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:football/features/presention/widgets/game_page.dart';
+import 'package:football/features/presention/pages/game_page.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,19 +24,20 @@ class HomePage extends StatelessWidget {
         Tab(text: 'Футбольные поля',),
         Tab(text: 'Турниры',),
         Tab(text: 'Игроки ',),
-        
-      ]),
+      ],
+      ),
         ),
        body: const TabBarView(children:[ 
       Card(child: GamePage()),
-        Card(child:Text('Футбольные поля'),),
-          Card(child: Text('Турниры'),),
-          Card(child: Text('Игроки '),),
-        
-       ])
-       
-      
+      Card(child:Text('Футбольные поля'),),
+      Card(child: Text('Турниры'),
       ),
+      Card(child: Text('Игроки '),
+      ),
+        
+       ],
+       ),
+     ),
     );
   }
 }
