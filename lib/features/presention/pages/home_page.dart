@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football/features/presention/pages/game_page.dart';
-import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:football/features/presention/widgets/app_bar_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,32 +11,24 @@ class HomePage extends StatelessWidget {
       length: 4,initialIndex: 1,
       child: Scaffold(
         appBar: AppBar(
-      title: Row(
-        children: [
-        const Icon(Icons.arrow_back_ios),
-        const Gap(10),
-         Text('Игры', style: GoogleFonts.ubuntu(fontWeight: FontWeight.w700, fontSize: 24),)
-        ],
-      ),
+      title: const AppBarWidget(icon: Icons.arrow_back_ios,text: 'Игры',),
       bottom: const TabBar(tabs: [
-        Tab(text: 'Игры',),
         Tab(text: 'Футбольные поля',),
+        Tab(text: 'Игры',),
         Tab(text: 'Турниры',),
         Tab(text: 'Игроки ',),
       ],
       ),
         ),
        body: const TabBarView(children:[ 
+           Text('Футбольные поля'),
              GamePage(),
-             Text('Футбольные поля'),
              Text('Турниры'),
              Text('Игроки '),
-        
        ],
        ),
      ),
     );
   }
 }
-
 

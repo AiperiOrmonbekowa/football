@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football/features/presention/widgets/list_view_widget.dart';
-import 'package:football/features/presention/widgets/row_widget.dart';
+import 'package:football/features/presention/widgets/category_widget.dart';
 import 'package:gap/gap.dart';
 
 class GamePage extends StatelessWidget {
@@ -57,7 +57,7 @@ class GamePage extends StatelessWidget {
   
     return showDialog<void>(
       context: context,
-      barrierDismissible: false, // User must tap button to dismiss
+      barrierDismissible: false, 
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Dialog Title'),
