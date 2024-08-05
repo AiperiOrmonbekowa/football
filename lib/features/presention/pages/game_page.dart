@@ -32,7 +32,7 @@ class GamePage extends StatelessWidget {
       ),
      
   const  Padding(
-       padding: EdgeInsets.symmetric(horizontal: 17),
+       padding: EdgeInsets.symmetric(horizontal: 30),
        child:  Row(
        children: [
         Text('все'),

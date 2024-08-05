@@ -47,6 +47,8 @@ class Game {
       image: json['image'] as String?,
     );
   }
+
+  fetchGames() {}
 }
 
 
