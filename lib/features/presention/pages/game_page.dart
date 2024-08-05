@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:football/features/presention/widgets/list_view_widget.dart';
-import 'package:football/features/presention/widgets/category_widget.dart';
+import 'package:football/features/presention/widgets/game_page/category_widget.dart';
+import 'package:football/features/presention/pages/home_page.dart';
 import 'package:gap/gap.dart';
 
 class GamePage extends StatelessWidget {
@@ -42,7 +42,7 @@ class GamePage extends StatelessWidget {
            ),
      ),
     
-     const ListViewWidget()
+     const HomePage()
       ],
      );
      

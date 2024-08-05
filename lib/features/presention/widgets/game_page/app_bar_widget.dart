@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:football/constants/app_text_style.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({
@@ -16,9 +16,10 @@ class AppBarWidget extends StatelessWidget {
       children: [
       GestureDetector(
         onTap: onTap,
-        child: Icon(icon)),
+        child: Icon(icon),
+        ),
       const Gap(10),
-       Text( text, style: GoogleFonts.ubuntu(fontWeight: FontWeight.w700, fontSize: 24),)
+       Text( text, style: AppTextStyle.appBarText)
       ],
     );
   }

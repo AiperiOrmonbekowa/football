@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:football/constants/app_text_style.dart';
 
 class Category extends StatelessWidget {
   const Category({
@@ -14,7 +15,7 @@ class Category extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Row(children: [
-       Text(text, style:const TextStyle(color: Colors.black, fontSize: 15),), 
+       Text(text, style:AppTextStyle.categoryText), 
        Icon(icon), 
       ],),
     );
