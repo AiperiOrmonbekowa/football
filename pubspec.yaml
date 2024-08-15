@@ -23,6 +23,13 @@ dependencies:
   flutter_svg: ^2.0.10+1
   go_router: ^14.2.2
   google_maps_flutter: ^2.7.1
+  location: ^6.0.2
+  url_launcher: ^6.3.0
+
+
+
+
+
 
 dev_dependencies:
   flutter_test:

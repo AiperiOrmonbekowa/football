@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:football/features/presention/pages/game_page.dart';
-import 'package:football/features/presention/widgets/game_page/app_bar_widget.dart';
+import 'package:football/features/presention/pages/home_page.dart';
+import 'package:football/features/presention/widgets/game/app_bar_widget.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
         ),
        body: const TabBarView(children:[ 
            Text('Футбольные поля'),
-             GamePage(),
+             HomePage(),
              Text('Турниры'),
              Text('Игроки'),
        ],

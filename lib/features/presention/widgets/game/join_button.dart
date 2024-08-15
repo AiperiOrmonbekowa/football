@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:football/constants/app_text_style.dart';
-import 'package:football/features/data/model/game_model.dart';
+import 'package:football/constants/static/app_text_style.dart';
+import 'package:football/features/data/model/game/game_model.dart';
 import 'package:football/features/presention/pages/game_detail.dart';
-
-
 
 class JoinButton extends StatelessWidget {
   const JoinButton({
@@ -16,7 +14,9 @@ final Game game;
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> GameDetail(game: game,)));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> GameDetailPage(game: game),
+      ),
+      );
       }, 
     style:ElevatedButton.styleFrom(
       backgroundColor: Colors.grey[400],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:football/constants/app_colors.dart';
+import 'package:football/constants/static/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyle{
@@ -17,6 +17,5 @@ static const  TextStyle vznos = TextStyle(fontWeight: FontWeight.w500, fontSize:
 static const  TextStyle threeRowDetail =TextStyle(fontWeight: FontWeight.w500, fontSize: 15);
 static TextStyle appBarText = GoogleFonts.ubuntu(fontWeight: FontWeight.w700, fontSize: 24);
 static const TextStyle categoryText =  TextStyle(color: Colors.black, fontSize: 15);
-static  TextStyle joinButtonText =  GoogleFonts.ubuntu(color: AppColors.white, fontWeight: FontWeight.w500,fontSize: 14);
-
+static  TextStyle joinButtonText =  GoogleFonts.ubuntu(color: AppColors.white, fontWeight: FontWeight.w600,fontSize: 15);
 }
