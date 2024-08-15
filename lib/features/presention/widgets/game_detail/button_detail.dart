@@ -25,6 +25,7 @@ class _ButtonDetailState extends State<ButtonDetail> {
               ), 
               ),
         onPressed:(){
+          
          showMyDialog(context) ;
         },
         child: Text('Присоединиться', style:AppTextStyle.organizerName ,),

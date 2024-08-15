@@ -14,6 +14,7 @@ class VznosZaCheloveka extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
       Text(text1), Text(text2,style:AppTextStyle.vznos),
-                    ],);
+                    ],
+                    );
   }
 }

@@ -1,6 +1,6 @@
 
+// import 'package:football/features/presention/pages/game_detail.dart';
 // import 'package:football/features/presention/pages/home_page.dart';
-// import 'package:football/features/presention/pages/yandex_map.dart';
 // import 'package:go_router/go_router.dart';
 
 // final goRouter = GoRouter(
@@ -12,7 +12,7 @@
 //       routes: [
 //         GoRoute(
 //           path: 'mapScreen',
-//           builder: (context, state) => const MapScreen()
+//           builder: (context, state) => const GameDetailPage(game: Ga,)
 //         ),
 //       ],
 //     ),

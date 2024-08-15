@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:football/constants/static/app_colors.dart';
 import 'package:football/constants/static/app_text_style.dart';
 import 'package:football/features/data/model/game/game_model.dart';
 import 'package:football/features/data/service/game_detail/game_service_detail.dart';
 import 'package:football/features/presention/widgets/game_detail/button_detail.dart';
-import 'package:football/features/presention/widgets/game_detail/organition_row_detail.dart';
+import 'package:football/features/presention/widgets/game_detail/cash_game.dart';
+import 'package:football/features/presention/widgets/game_detail/organization_row_detail.dart';
 import 'package:football/features/presention/widgets/game_detail/tree_row_widgets.dart';
 import 'package:football/features/presention/widgets/game_detail/vznos_za_cheloveka.dart';
 import 'package:football/features/presention/widgets/game/app_bar_widget.dart';
@@ -32,8 +32,10 @@ class _GameDetailPageState extends State<GameDetailPage> {
 
   Future<void> _launchURL(double latitude, double longitude) async {
     final url = 'geo:$latitude,$longitude';
-    if (await canLaunchUrl(Uri.parse(url))) {
+print(url);
       await launchUrl(Uri.parse(url));
+    if (await canLaunchUrl(Uri.parse(url),
+    )) {
     } else {
       const Center(
         child: Text('Could not launch'),
@@ -80,40 +82,24 @@ class _GameDetailPageState extends State<GameDetailPage> {
                           ),
                           child: Column(
                             children: [
-                              const Padding(
-                                padding: EdgeInsets.only(top: 12),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      Icons.account_balance_wallet,
-                                      color: AppColors.green,
-                                    ),
-                                    Gap(3),
-                                    Text(
-                                      'Cash Game',
-                                      style: AppTextStyle.cashGameDetail,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                             const CashGame(),
                               const Text(
                                 'Заголовок',
                                 style: AppTextStyle.zagalovok,
                               ),
                               Text('$formattedDate', style: AppTextStyle.formattedDate),
                               const Gap(10),
-                              const Row(
+                             Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   VznosZaCheloveka(
                                     text1: 'Взнос за человека:',
-                                    text2: '175 cом',
+                                    text2: '${gameDetails.contribution} сом'
                                   ),
-                                  Gap(30),
+                                 const Gap(30),
                                   VznosZaCheloveka(
                                     text1: 'Продолжительность игры:',
-                                    text2: '2 часа',
+                                    text2: '${widget.game.startDate.hour} саат',
                                   ),
                                 ],
                               ),
@@ -146,7 +132,7 @@ class _GameDetailPageState extends State<GameDetailPage> {
                           onTap: () {
                             _launchURL(gameDetails.latitude, gameDetails.longitude);
                           },
-                          child: Image.asset('assets/images/map.png'),
+                          child: Image.asset(gameDetails.image?? 'assets/images/map.png'),
                         ),
                         const Padding(
                           padding: EdgeInsets.only(right: 250, top: 6),
@@ -157,7 +143,7 @@ class _GameDetailPageState extends State<GameDetailPage> {
                         ),
                         const Gap(6),
                         Text(
-                          textAlign: TextAlign.center,
+                         textAlign: TextAlign.center,
                         gameDetails.description,
                           style: AppTextStyle.organizatorDetail,
                         ),
@@ -184,6 +170,7 @@ class _GameDetailPageState extends State<GameDetailPage> {
     );
   }
 }
+
 
 
 

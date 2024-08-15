@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:football/constants/static/app_colors.dart';
@@ -20,8 +19,6 @@ class GamePage extends StatefulWidget {
 }
 
  class _GamePageState extends State<GamePage> {
-  
- double _currentSlidervalue = 12;
 
  GameService? gameService;
     final Location location = Location();
@@ -32,7 +29,6 @@ class GamePage extends StatefulWidget {
    gameService = GameService();
   }
 
-  
   @override
   Widget build(BuildContext context) {
   return FutureBuilder<List<Game>>(
@@ -42,7 +38,7 @@ class GamePage extends StatefulWidget {
             return const Center(child: CircularProgressIndicator());
           }
         else  if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(child: Text('Error: ${snapshot.error}'),);
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
             return const Center(child: Text('error'),
             );
@@ -54,7 +50,8 @@ class GamePage extends StatefulWidget {
          shrinkWrap: true,
                       itemCount: snapshot.data!.length,
                      itemBuilder: (context, index) {
-                       final game = snapshot.data![index];
+                     final game = snapshot.data![index];
+                          double? currentSlidervalue = game.existingPlayerCount.toDouble();
                       final formattedDate = DateFormat('dd-MM-yyyy  kk:mm').format(game.startDate);
                        return SingleChildScrollView(
                         scrollDirection: Axis.vertical,
@@ -103,19 +100,16 @@ class GamePage extends StatefulWidget {
                                    SizedBox(
                                             width: 315,
                                             child: Slider(divisions: 12,
-                                            label: _currentSlidervalue.round().toString(),
+                                            label: currentSlidervalue.round().toString(),
                                               activeColor: AppColors.white,
                                               thumbColor: Colors.white, 
-                                              max: 12,
-                                              value: _currentSlidervalue,
+                                              max: game.maxPlayer.toDouble(),
+                                              value: currentSlidervalue,
                                               onChanged: (double value){
-                              setState(() {
-                                _currentSlidervalue =value;
-                              },
-                              );
-                                              },
+                              currentSlidervalue =value;
+                             },
                                             ),
-                              ),
+                              ), 
                              Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -123,15 +117,13 @@ class GamePage extends StatefulWidget {
                                         height: 23,
                                        child: SvgPicture.asset('assets/icons/shirtIcon.svg')
                                         ),
-                                        Text('$_currentSlidervalue', style: AppTextStyle.sliderValue),
+                                        Text(game.maxPlayer.toString(), style: AppTextStyle.sliderValue),
                                           ],
                                           ),
-                              
-                              ],
+                             ],
                               ),
                             ),
-                       
-                           ],
+                       ],
                            ),
                          ),
                        );
